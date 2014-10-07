@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Twitch Monitor")]
-[assembly: AssemblyDescription("Helpful tool for monitoring Twitch account information while streaming!  If anything seems a little rough, or if you encounter any bugs, please contact me at zclaycreationz@gmail.com.")]
+[assembly: AssemblyDescription("Helpful tool for monitoring Twitch account information while streaming!  If anything seems a little rough, or if you encounter any bugs, please contact me at zclay32@gmail.com.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Twitch Monitor")]

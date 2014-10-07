@@ -2628,10 +2628,8 @@
   <data name="textBoxDescription.Text" xml:space="preserve">
     <value>Helpful tool for monitoring Twitch account information while streaming!
 
-If anything seems a little rough, or if you encounter any bugs, please contact me at zclaycreationz@gmail.com. 
+If anything seems a little rough, or if you encounter any bugs, please contact me at zclay32@gmail.com. 
 
-You can also visit my website http://www.zclaycreationz.com/twitch-monitor/ for more information about Twitch Monitor.
-
-Twitch Monitor is developed entirely in my spare time.  Please click the 'Donate' button below to let me know you're enjoying the tool.  Any help is greatly appreciated! :)</value>
+Twitch Monitor is an open source project available on GitHub: https://github.com/zclay32/twitch-monitor</value>
   </data>
 </root>

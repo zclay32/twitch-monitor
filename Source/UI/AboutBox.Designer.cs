@@ -78,7 +78,7 @@
             this.donateButton.Name = "donateButton";
             this.donateButton.Size = new System.Drawing.Size(75, 23);
             this.donateButton.TabIndex = 1;
-            this.donateButton.Text = "Donate";
+            this.donateButton.Text = "GitHub";
             this.donateButton.UseVisualStyleBackColor = true;
             this.donateButton.Click += new System.EventHandler(this.donateButton_Click);
             // 

@@ -104,7 +104,7 @@ namespace TwitchMonitor
 
         private void donateButton_Click(object sender, EventArgs e)
         {
-            Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QA68CX92RDXPE");
+            Process.Start("https://github.com/zclay32/twitch-monitor");
         }
     }
 }
