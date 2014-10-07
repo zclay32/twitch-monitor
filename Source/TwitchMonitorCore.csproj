@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{70772369-864C-4AFA-A8FE-F4FE855CB457}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TwitchMonitor</RootNamespace>
+    <AssemblyName>TwitchMonitorCore</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\External\Newtonsoft.Json\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\AdRunner.cs" />
+    <Compile Include="Core\AlarmClock.cs" />
+    <Compile Include="Core\Apis\KeyboardCommands\KeyboardCommandsApi.cs" />
+    <Compile Include="Core\Apis\KeyboardCommands\KeyCommandType.cs" />
+    <Compile Include="Core\Apis\MissileLauncher\MissileLauncherApi.cs" />
+    <Compile Include="Core\Apis\Twitch\TwitchApi.cs" />
+    <Compile Include="Core\Apis\Win32DllImports\User32Dll.cs" />
+    <Compile Include="Core\Engine.cs" />
+    <Compile Include="Core\FileBackup.cs" />
+    <Compile Include="Core\Follower.cs" />
+    <Compile Include="Core\FollowerCache.cs" />
+    <Compile Include="Core\FormattedIrcMessages.cs" />
+    <Compile Include="Core\Interfaces\ILoadingView.cs" />
+    <Compile Include="Core\Interfaces\ISettingsView.cs" />
+    <Compile Include="Core\Interfaces\IView.cs" />
+    <Compile Include="Core\ServerPings.cs" />
+    <Compile Include="Core\Settings.cs" />
+    <Compile Include="Core\SoundPlayer.cs" />
+    <Compile Include="Core\SubscriberCache.cs" />
+    <Compile Include="Core\Types\AccessTokenJson.cs" />
+    <Compile Include="Core\Types\AdTimeRemaining.cs" />
+    <Compile Include="Core\Types\BotCommandsAccess.cs" />
+    <Compile Include="Core\Types\ChannelJson.cs" />
+    <Compile Include="Core\Types\FollowerActivity.cs" />
+    <Compile Include="Core\Types\FollowersJson.cs" />
+    <Compile Include="Core\Types\IngestsJson.cs" />
+    <Compile Include="Core\Types\IrcMessageType.cs" />
+    <Compile Include="Core\Types\LatestVersionJson.cs" />
+    <Compile Include="Core\Types\LinksJson.cs" />
+    <Compile Include="Core\Types\ProfileJson.cs" />
+    <Compile Include="Core\Types\ServerPingsDataTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Core\Types\StreamJson.cs" />
+    <Compile Include="Core\Types\StreamStatusUpdateJson.cs" />
+    <Compile Include="Core\Types\SubscriberActivity.cs" />
+    <Compile Include="Core\Types\SubscribersJson.cs" />
+    <Compile Include="Core\Types\ThreadMessage.cs" />
+    <Compile Include="Core\Types\TimerMode.cs" />
+    <Compile Include="Core\Types\UserJson.cs" />
+    <Compile Include="Core\Types\WebRequestContentType.cs" />
+    <Compile Include="Core\UpgradeTasks.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<project name="TwitchMonitor" default="rebuild">
+    <target name="rebuild">		
+        <property name="bumpVersion.file"         value=".\TwitchMonitor.version" />
+        <property name="bumpVersion.assemblyFile" value="..\Source\Properties\AssemblyInfo.cs" />
+        <property name="bumpVersion.makefile"     value=".\fake.mak" />
+		
+        <call target="CSVersionBump" />
+        <solution configuration="release" solutionfile="..\Source\TwitchMonitor.sln" />
+        <call target="CSVersionSave" />
+        
+        <call target="buildInstaller" />
+		<!-- <call target="zipInstaller" /> -->
+    </target>
+    
+    <!-- =========================================================================
+    //  Bump version tasks for C# projects
+    //    The following variables must be defined before calling these methods:
+	//      bumpVersion.file
+	//      bumpVersion.assemblyFile
+	//      bumpVersion.makefile
+    ======================================================================== //-->
+    <property name="versionBumpExe" value=".\Build\VersionBump.exe" />
+    <target name="CSVersionBump">
+        <exec program="${versionBumpExe}" failonerror="true" commandline="/bump &quot;${bumpVersion.file}&quot; &quot;${bumpVersion.assemblyFile}&quot;" />
+        <loadfile file="${bumpVersion.file}" property="bumpVersion.value" />
+    </target>
+    <target name="CSVersionSave">
+        <exec program="${versionBumpExe}" failonerror="true" commandline="/save &quot;${bumpVersion.file}&quot; &quot;${bumpVersion.makefile}&quot;" />
+    </target>
+    
+    <target name="buildInstaller">
+        <loadfile file="${bumpVersion.file}" property="Version" />
+        <exec program="makensis" failonerror="true" commandline="/DVERSION=${Version} installer.nsi" />
+    </target>
+	
+	<target name="zipInstaller">
+		<zip zipfile="..\Installer\TwitchMonitorSetup.zip">
+			<fileset basedir=".\Installer">
+				<include name="TwitchMonitorSetup.exe" />
+			</fileset>
+		</zip>
+	</target>
+</project>

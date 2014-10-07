@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9465408F-F0E7-42E7-96BE-3B79EF1A1844}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TwitchMonitor</RootNamespace>
+    <AssemblyName>TwitchMonitor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Full\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Full\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\ProgramIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\Newtonsoft.Json\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddChannelProfileDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AddChannelProfileDialog.Designer.cs">
+      <DependentUpon>AddChannelProfileDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddOrEditKeyCommandDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AddOrEditKeyCommandDialog.Designer.cs">
+      <DependentUpon>AddOrEditKeyCommandDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ClientRegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ClientRegistrationForm.Designer.cs">
+      <DependentUpon>ClientRegistrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\BaseSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\BaseSettingsControl.Designer.cs">
+      <DependentUpon>BaseSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\FileOutputSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\FileOutputSettingsControl.Designer.cs">
+      <DependentUpon>FileOutputSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\FlickerFreeRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\FlickerFreeRichTextBox.Designer.cs">
+      <DependentUpon>FlickerFreeRichTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\IrcChatNotificationsSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\IrcChatNotificationsSettingsControl.Designer.cs">
+      <DependentUpon>IrcChatNotificationsSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\IrcControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\IrcControl.Designer.cs">
+      <DependentUpon>IrcControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\IrcFontsAndColorsSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\IrcFontsAndColorsSettingsControl.Designer.cs">
+      <DependentUpon>IrcFontsAndColorsSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\IrcSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\IrcSettingsControl.Designer.cs">
+      <DependentUpon>IrcSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\KeyCommandSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\KeyCommandSettingsControl.Designer.cs">
+      <DependentUpon>KeyCommandSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\MiniCastSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\MiniCastSettingsControl.Designer.cs">
+      <DependentUpon>MiniCastSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\MiniViewCaptionLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\MiniViewCaptionLabel.Designer.cs">
+      <DependentUpon>MiniViewCaptionLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\MiniViewTextLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\MiniViewTextLabel.Designer.cs">
+      <DependentUpon>MiniViewTextLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\MissileLauncherSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\MissileLauncherSettingsControl.Designer.cs">
+      <DependentUpon>MissileLauncherSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\NewSubcriberSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\NewSubcriberSettingsControl.Designer.cs">
+      <DependentUpon>NewSubcriberSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\QuickViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\QuickViewControl.Designer.cs">
+      <DependentUpon>QuickViewControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\ServerListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ServerListControl.Designer.cs">
+      <DependentUpon>ServerListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\SoundSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\SoundSettingsControl.Designer.cs">
+      <DependentUpon>SoundSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\SoundTriggerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\SoundTriggerControl.Designer.cs">
+      <DependentUpon>SoundTriggerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\SubscriberSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\SubscriberSettingsControl.Designer.cs">
+      <DependentUpon>SubscriberSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\TwitchChannelSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\TwitchChannelSettings.Designer.cs">
+      <DependentUpon>TwitchChannelSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\TimerUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\TimerUserControl.Designer.cs">
+      <DependentUpon>TimerUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DiceRollDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DiceRollDialog.Designer.cs">
+      <DependentUpon>DiceRollDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EditIrcCommandDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EditIrcCommandDialog.Designer.cs">
+      <DependentUpon>EditIrcCommandDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EditStreamTitleDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EditStreamTitleDialog.Designer.cs">
+      <DependentUpon>EditStreamTitleDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\IrcDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\IrcDialog.Designer.cs">
+      <DependentUpon>IrcDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\KeyCommanderDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\KeyCommanderDialog.Designer.cs">
+      <DependentUpon>KeyCommanderDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MiniWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MiniWindow.Designer.cs">
+      <DependentUpon>MiniWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\NewSubscriberDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\NewSubscriberDialog.Designer.cs">
+      <DependentUpon>NewSubscriberDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SettingsDialog.Designer.cs">
+      <DependentUpon>SettingsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UpgradeTasksDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UpgradeTasksDialog.Designer.cs">
+      <DependentUpon>UpgradeTasksDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WaitingDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\WaitingDialog.Designer.cs">
+      <DependentUpon>WaitingDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Updater.cs" />
+    <EmbeddedResource Include="UI\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AddChannelProfileDialog.resx">
+      <DependentUpon>AddChannelProfileDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AddOrEditKeyCommandDialog.resx">
+      <DependentUpon>AddOrEditKeyCommandDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ClientRegistrationForm.resx">
+      <DependentUpon>ClientRegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\BaseSettingsControl.resx">
+      <DependentUpon>BaseSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\FileOutputSettingsControl.resx">
+      <DependentUpon>FileOutputSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\IrcChatNotificationsSettingsControl.resx">
+      <DependentUpon>IrcChatNotificationsSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\IrcControl.resx">
+      <DependentUpon>IrcControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\IrcFontsAndColorsSettingsControl.resx">
+      <DependentUpon>IrcFontsAndColorsSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\IrcSettingsControl.resx">
+      <DependentUpon>IrcSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\KeyCommandSettingsControl.resx">
+      <DependentUpon>KeyCommandSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\MiniCastSettingsControl.resx">
+      <DependentUpon>MiniCastSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\MiniViewCaptionLabel.resx">
+      <DependentUpon>MiniViewCaptionLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\MiniViewTextLabel.resx">
+      <DependentUpon>MiniViewTextLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\MissileLauncherSettingsControl.resx">
+      <DependentUpon>MissileLauncherSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\NewSubcriberSettingsControl.resx">
+      <DependentUpon>NewSubcriberSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\QuickViewControl.resx">
+      <DependentUpon>QuickViewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\ServerListControl.resx">
+      <DependentUpon>ServerListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\SoundSettingsControl.resx">
+      <DependentUpon>SoundSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\SoundTriggerControl.resx">
+      <DependentUpon>SoundTriggerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\SubscriberSettingsControl.resx">
+      <DependentUpon>SubscriberSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\TwitchChannelSettings.resx">
+      <DependentUpon>TwitchChannelSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\TimerUserControl.resx">
+      <DependentUpon>TimerUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DiceRollDialog.resx">
+      <DependentUpon>DiceRollDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EditIrcCommandDialog.resx">
+      <DependentUpon>EditIrcCommandDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EditStreamTitleDialog.resx">
+      <DependentUpon>EditStreamTitleDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\IrcDialog.resx">
+      <DependentUpon>IrcDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\KeyCommanderDialog.resx">
+      <DependentUpon>KeyCommanderDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MiniWindow.resx">
+      <DependentUpon>MiniWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NewSubscriberDialog.resx">
+      <DependentUpon>NewSubscriberDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SettingsDialog.resx">
+      <DependentUpon>SettingsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UpgradeTasksDialog.resx">
+      <DependentUpon>UpgradeTasksDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\WaitingDialog.resx">
+      <DependentUpon>WaitingDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProgramIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ircTemplate.html" />
+    <None Include="Resources\no_user_image.png" />
+    <Content Include="Resources\ProgramIcon.ico" />
+    <None Include="Resources\stop.png" />
+    <None Include="Resources\pause.png" />
+    <None Include="Resources\on.png" />
+    <None Include="Resources\off.png" />
+    <None Include="Resources\maximize.png" />
+    <None Include="Resources\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="TwitchMonitorCore.csproj">
+      <Project>{70772369-864C-4AFA-A8FE-F4FE855CB457}</Project>
+      <Name>TwitchMonitorCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="TwitchMonitorIrc.csproj">
+      <Project>{3294F238-65B9-4988-AC06-2B5B2539BD79}</Project>
+      <Name>TwitchMonitorIrc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
