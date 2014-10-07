@@ -5,6 +5,14 @@ Twitch Monitor is a helpful tool for streamers who broadcast on Twitch.tv.
 
 ## Getting Started
 
+## System Requirements
+
+* .NET 4.0 or later
+
+## Build Requirements
+
+* Visual Studio 2010
+
 ## Helpful Links
 
 ## Special Thanks
